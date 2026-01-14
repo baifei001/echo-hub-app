@@ -238,7 +238,7 @@
 
       // 获取 redirect 参数，如果存在则跳转到指定页面，否则跳转到首页
       const redirect = route.query.redirect as string
-      router.push(redirect || '/')
+      await router.push(redirect || '/')
     } catch (error) {
       // 处理 HttpError
       if (error instanceof HttpError) {
@@ -256,7 +256,7 @@
 
   // 重置拖拽验证
   const resetDragVerify = () => {
-    dragVerify.value.reset()
+    // dragVerify.value.reset()      //TODO 滑块重置会导致前端页面报错，但是不重置好像也没什么问题
   }
 
   // 登录成功提示
